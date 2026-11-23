@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "dev-team",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": {
     "en": "Dev team",
     "cs": "Vývojový tým"
@@ -59,8 +59,8 @@
           },
           "schedule": "0 8 * * 1",
           "prompt": {
-            "en": "Write this week's plan for the team: the three most important goals, who owns each of them ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) and the risks you see. Keep it under 200 words.",
-            "cs": "Napiš plán týmu na tento týden: tři nejdůležitější cíle, kdo za který odpovídá ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) a jaká vidíš rizika. Nejvýš 200 slov."
+            "en": "Write the team's plan for this week (Monday to Friday). Work from the goals, tasks and deadlines you have in memory or in your notes. Give the three most important goals, each with its owner ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) and one risk. If you have nothing to go on, do not invent a plan: write the three questions you need answered to make one. Under 200 words.",
+            "cs": "Napiš plán týmu na tento týden (pondělí až pátek). Vycházej z cílů, úkolů a termínů, které máš v paměti nebo v poznámkách. Uveď tři nejdůležitější cíle, u každého vlastníka ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) a jedno riziko. Když podklady nemáš, plán si nevymýšlej: napiš tři otázky, na které potřebuješ odpověď, abys ho sestavil. Nejvýš 200 slov."
           },
           "to_chat": true,
           "continuity": true

@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "startup-team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Startup team",
     "cs": "Startup"
@@ -59,8 +59,8 @@
           },
           "schedule": "0 8 * * 1",
           "prompt": {
-            "en": "Set this week's three priorities from what you know about the company, each with its owner ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) and how we will know it is done. Under 150 words.",
-            "cs": "Urči tři priority na tento týden podle toho, co víš o firmě, u každé vlastníka ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) a jak poznáme, že je hotová. Nejvýš 150 slov."
+            "en": "Set three priorities for this week (Monday to Friday). Work from the quarter's goal and the state of the product, customers and runway you have in memory or in your notes. Give each priority its owner ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) and how we will know it is done. If you do not know the quarter's goal, do not invent priorities: ask for it. Under 150 words.",
+            "cs": "Urči tři priority na tento týden (pondělí až pátek). Vycházej z cíle čtvrtletí, stavu produktu, zákazníků a runwaye, které máš v paměti nebo v poznámkách. U každé priority uveď vlastníka ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) a jak poznáme, že je hotová. Když cíl čtvrtletí neznáš, priority nevymýšlej: zeptej se na něj. Nejvýš 150 slov."
           },
           "to_chat": true,
           "continuity": true
@@ -154,8 +154,8 @@
           },
           "schedule": "0 9 1 * *",
           "prompt": {
-            "en": "Sum up last month from the numbers I shared: income, costs by category, cash at the end and runway in months. Say what changed and warn {{@ceo}} if runway is under six months.",
-            "cs": "Shrň minulý měsíc z čísel, která jsem ti dal: příjmy, náklady podle kategorií, hotovost na konci a runway v měsících. Řekni, co se změnilo, a varuj {{@ceo}}, pokud je runway pod šest měsíců."
+            "en": "Sum up the last calendar month and state the period the summary covers. Use only the numbers you have for that month. Give income, costs by category, cash at month end and runway in months, with the calculation. Give the change against the month before only if you have its numbers. List missing numbers and do not estimate them. Without cash and costs, give no runway. If runway is under six months, add a warning for {{@ceo}}.",
+            "cs": "Shrň minulý kalendářní měsíc a uveď, za které období shrnutí platí. Použij jen čísla, která k tomu měsíci máš. Uveď příjmy, náklady podle kategorií, hotovost na konci měsíce a runway v měsících i s výpočtem. Změnu proti předchozímu měsíci uveď, jen když máš jeho čísla. Chybějící čísla vypiš a nedopočítávej je. Bez hotovosti a nákladů runway neuváděj. Když je runway pod šest měsíců, přidej varování pro {{@ceo}}."
           },
           "to_chat": true,
           "continuity": true

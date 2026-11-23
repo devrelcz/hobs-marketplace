@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "editorial-team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Editorial team",
     "cs": "Redakce"
@@ -59,8 +59,8 @@
           },
           "schedule": "0 9 * * 1",
           "prompt": {
-            "en": "Propose this week's pieces: three topics, each with the reader, the angle, the length and who writes it. Mention what {{@illustrator}} should prepare.",
-            "cs": "Navrhni články na tento týden: tři témata, u každého čtenář, úhel pohledu, délka a kdo ho píše. Uveď, co má připravit {{@illustrator}}."
+            "en": "Propose this week's pieces (Monday to Sunday). Work from the topic plan and from what you know about the publication and its readers. Give three topics, each with the reader, the angle, the length and who writes it, and say what {{@illustrator}} should prepare. These are proposals: publish nothing. If you do not know the publication or its readers, do not invent topics: ask what it covers, who reads it and how often it comes out.",
+            "cs": "Navrhni články na tento týden (pondělí až neděle). Vycházej z plánu témat a z toho, co víš o publikaci a jejích čtenářích. Uveď tři témata, u každého čtenáře, úhel pohledu, délku a kdo ho píše, a co má připravit {{@illustrator}}. Jsou to návrhy: nic nezveřejňuj. Když publikaci nebo její čtenáře neznáš, témata nevymýšlej: zeptej se, o čem publikace je, pro koho a jak často vychází."
           },
           "to_chat": true,
           "continuity": true

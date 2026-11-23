@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "personal-team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Personal team",
     "cs": "Osobní tým"
@@ -59,8 +59,8 @@
           },
           "schedule": "0 7 * * 1-5",
           "prompt": {
-            "en": "Write a short plan for today from what you know from our conversations: tasks, deadlines and anything I asked you to remind me of. End with one question about what to add. Under 120 words.",
-            "cs": "Napiš krátký plán na dnešek podle toho, co víš z našich rozhovorů: úkoly, termíny a cokoli, co ti mám připomenout. Zakonči jednou otázkou, co přidat. Nejvýš 120 slov."
+            "en": "Write a short plan for today. Work from the tasks, deadlines and reminders you have in memory or in your notes. Say what needs doing today, what has a deadline and what I asked to be reminded of. If you have nothing for today, say so in one sentence and invent nothing. End with one question about what to add. Under 120 words.",
+            "cs": "Napiš krátký plán na dnešek. Vycházej z úkolů, termínů a připomínek, které máš v paměti nebo v poznámkách. Uveď, co je dnes potřeba udělat, co má termín a co jsem chtěl připomenout. Když na dnešek nic nemáš, řekni to jednou větou a nic nevymýšlej. Zakonči jednou otázkou, co přidat. Nejvýš 120 slov."
           },
           "to_chat": true,
           "continuity": true
@@ -94,8 +94,8 @@
           },
           "schedule": "0 17 * * 0",
           "prompt": {
-            "en": "Suggest dinners for the coming week that fit what you know about my tastes and time, with one shopping list grouped by shop section. Ask {{@budget}} to keep an eye on the cost if it runs high.",
-            "cs": "Navrhni večeře na příští týden podle toho, co víš o mých chutích a čase, a k nim jeden nákupní seznam seřazený podle oddělení obchodu. Když to vyjde draho, dej vědět {{@budget}}."
+            "en": "Suggest dinners for the coming week (Monday to Sunday) with one shopping list grouped by shop section. Keep to the tastes, allergies, cooking time and number of people you know. If you do not know the allergies or how many people eat, ask and mark the menu as provisional. If the week costs more than usual, say so and add a short note for {{@budget}}.",
+            "cs": "Navrhni večeře na příští týden (pondělí až neděle) a k nim jeden nákupní seznam seřazený podle oddělení obchodu. Drž se chutí, alergií, času na vaření a počtu strávníků, které znáš. Když alergie nebo počet strávníků neznáš, zeptej se na ně a jídelníček označ jako předběžný. Když týden vyjde dráž než obvykle, napiš to a přidej krátkou zprávu pro {{@budget}}."
           },
           "to_chat": true
         }
@@ -148,8 +148,8 @@
           },
           "schedule": "0 9 1 * *",
           "prompt": {
-            "en": "Sum up last month from the spending I told you about: totals by category, what changed against the month before and the bills coming this month. Ask me for anything missing.",
-            "cs": "Shrň minulý měsíc podle výdajů, které jsem ti řekl: součty podle kategorií, co se změnilo proti předchozímu měsíci a jaké platby přijdou tento měsíc. Zeptej se na to, co chybí."
+            "en": "Sum up the last calendar month and state the period the summary covers. Use only the spending and income you have for that month. Give totals by category, the change against the month before (only if you have its numbers) and the bills due this month. List what is missing and do not estimate it. If you have no spending at all, write only what you need.",
+            "cs": "Shrň minulý kalendářní měsíc a uveď, za které období shrnutí platí. Použij jen výdaje a příjmy, které k tomu měsíci máš. Uveď součty podle kategorií, změnu proti předchozímu měsíci (jen když jeho čísla máš) a platby splatné tento měsíc. Chybějící údaje vypiš a nedopočítávej je. Když nemáš žádné výdaje, napiš jen, co potřebuješ dodat."
           },
           "to_chat": true,
           "continuity": true
@@ -183,8 +183,8 @@
           },
           "schedule": "0 8 * * 1",
           "prompt": {
-            "en": "Plan this week's exercise around what you know about my schedule and form: three to four short sessions, each with what to do and how long. Check with {{@assistant}} which days are busy.",
-            "cs": "Naplánuj pohyb na tento týden podle toho, co víš o mém programu a kondici: tři až čtyři krátké tréninky, u každého co dělat a jak dlouho. Ověř si s {{@assistant}}, které dny jsou nabité."
+            "en": "Plan this week's exercise (Monday to Sunday): three to four short sessions, each with the day, what to do and how long. Keep to the form, goals and limits you know. If you do not know them, propose a light first week, mark it as provisional and ask about form, goals and injuries. Check the busy days with {{@assistant}}. If you cannot, say which days you assumed.",
+            "cs": "Naplánuj pohyb na tento týden (pondělí až neděle): tři až čtyři krátké tréninky, u každého den, co dělat a jak dlouho. Drž se kondice, cílů a omezení, které znáš. Když je neznáš, navrhni lehký úvodní týden, označ ho jako předběžný a zeptej se na kondici, cíle a zranění. Nabité dny si ověř s {{@assistant}}. Když to nejde, uveď, s jakými dny počítáš."
           },
           "to_chat": true,
           "continuity": true

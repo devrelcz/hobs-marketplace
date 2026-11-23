@@ -119,6 +119,18 @@ function checkPlaceholders(where, text, keys) {
   }
 }
 
+const placeholderKeys = (text) => new Set([...text.matchAll(PLACEHOLDER)].map(([, inner]) => inner));
+
+// Every language of a text must name the same teammates, or a Hob behaves
+// differently depending on the language it was imported in.
+function checkSameTeammates(where, texts) {
+  const [[firstLang, first], ...rest] = Object.entries(texts).map(([lang, text]) => [lang, placeholderKeys(text)]);
+  for (const [lang, keys] of rest) {
+    for (const k of first) if (!keys.has(k)) fail(where, `{{${k}}} is in "${firstLang}" but not in "${lang}"`);
+    for (const k of keys) if (!first.has(k)) fail(where, `{{${k}}} is in "${lang}" but not in "${firstLang}"`);
+  }
+}
+
 function checkTeam(dir) {
   const where = `teams/${dir}/team.json`;
   const path = join(root, where);
@@ -163,6 +175,7 @@ function checkTeam(dir) {
     covers(`${at}.title`, m.title);
     covers(`${at}.description`, m.description);
     covers(`${at}.soul`, m.soul);
+    const souls = {};
     for (const [lang, rel] of Object.entries(m.soul)) {
       const soulPath = join(root, 'teams', dir, rel);
       const soulWhere = relative(root, soulPath);
@@ -177,8 +190,10 @@ function checkTeam(dir) {
       const size = statSync(soulPath).size;
       if (size === 0) fail(soulWhere, 'is empty');
       if (size > MAX_SOUL_BYTES) fail(soulWhere, `is ${size} bytes, the limit is ${MAX_SOUL_BYTES}`);
-      checkPlaceholders(soulWhere, readFileSync(soulPath, 'utf8'), keys);
+      souls[lang] = readFileSync(soulPath, 'utf8');
+      checkPlaceholders(soulWhere, souls[lang], keys);
     }
+    if (Object.keys(souls).length > 1) checkSameTeammates(`${where} ${at}.soul`, souls);
     for (const [j, job] of (m.jobs ?? []).entries()) {
       const jobAt = `${at}.jobs[${j}]`;
       covers(`${jobAt}.name`, job.name);
@@ -187,6 +202,7 @@ function checkTeam(dir) {
       for (const [lang, text] of Object.entries(job.prompt)) {
         checkPlaceholders(`${where} ${jobAt}.prompt.${lang}`, text, keys);
       }
+      checkSameTeammates(`${where} ${jobAt}.prompt`, job.prompt);
     }
   }
 
