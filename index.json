@@ -4,7 +4,7 @@
   "teams": [
     {
       "id": "dev-team",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "path": "teams/dev-team/team.json",
       "cover": "teams/dev-team/cover.webp",
       "name": {
@@ -45,7 +45,7 @@
     },
     {
       "id": "editorial-team",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "teams/editorial-team/team.json",
       "cover": "teams/editorial-team/cover.webp",
       "name": {
@@ -86,7 +86,7 @@
     },
     {
       "id": "marketing-team",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "teams/marketing-team/team.json",
       "cover": "teams/marketing-team/cover.webp",
       "name": {
@@ -127,7 +127,7 @@
     },
     {
       "id": "personal-team",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "teams/personal-team/team.json",
       "cover": "teams/personal-team/cover.webp",
       "name": {
@@ -168,7 +168,7 @@
     },
     {
       "id": "startup-team",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "teams/startup-team/team.json",
       "cover": "teams/startup-team/cover.webp",
       "name": {

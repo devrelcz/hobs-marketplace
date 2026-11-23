@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "marketing-team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Marketing team",
     "cs": "Marketingový tým"
@@ -59,8 +59,8 @@
           },
           "schedule": "0 9 * * 1",
           "prompt": {
-            "en": "Write this week's marketing plan: one goal, the three most important tasks and who owns each ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}). Under 150 words.",
-            "cs": "Napiš plán marketingu na tento týden: jeden cíl, tři nejdůležitější úkoly a kdo za který odpovídá ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}). Nejvýš 150 slov."
+            "en": "Write the marketing plan for this week (Monday to Friday). Work from the goal, the campaigns and the results you have in memory or in your notes. Give one measurable goal and the three most important tasks, each with its owner ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}) and a date. If you do not know the goal or the product, do not invent a plan: write what you need to know. Under 150 words.",
+            "cs": "Napiš plán marketingu na tento týden (pondělí až pátek). Vycházej z cíle, kampaní a výsledků, které máš v paměti nebo v poznámkách. Uveď jeden měřitelný cíl a tři nejdůležitější úkoly, u každého vlastníka ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}) a termín. Když cíl nebo produkt neznáš, plán si nevymýšlej: napiš, co potřebuješ vědět. Nejvýš 150 slov."
           },
           "to_chat": true,
           "continuity": true
@@ -134,8 +134,8 @@
           },
           "schedule": "0 10 * * 5",
           "prompt": {
-            "en": "Draft next week's posts: five posts across our networks, each with the network, the day, the text and an image idea. Mark which need approval from {{@cmo}}.",
-            "cs": "Navrhni příspěvky na příští týden: pět příspěvků napříč našimi sítěmi, u každého síť, den, text a nápad na obrázek. Označ, které musí schválit {{@cmo}}."
+            "en": "Draft five posts for next week (Monday to Sunday). Work from the networks, the campaign and the brand tone you know. Give each post its network, day, text and an image idea. These are drafts: publish nothing. {{@cmo}} can review the message, but only the user approves publishing each post on its network. If you do not know which networks the brand uses or what it promotes, ask that instead of drafting.",
+            "cs": "Navrhni pět příspěvků na příští týden (pondělí až neděle). Vycházej ze sítí, kampaně a tónu značky, které znáš. U každého uveď síť, den, text a nápad na obrázek. Jsou to návrhy: nic nezveřejňuj. Sdělení může posoudit {{@cmo}}, ale zveřejnění každého příspěvku na dané síti schvaluje jen uživatel. Když nevíš, na kterých sítích značka je nebo co propaguje, místo návrhů se na to zeptej."
           },
           "to_chat": true
         }
@@ -168,8 +168,8 @@
           },
           "schedule": "30 8 * * 1",
           "prompt": {
-            "en": "Sum up last week from the numbers I shared: the main metric against the goal, what went up and down, and one to three recommendations for {{@cmo}}. Ask for any numbers you are missing.",
-            "cs": "Shrň minulý týden z čísel, která jsem ti dal: hlavní metrika proti cíli, co rostlo a co klesalo a jedno až tři doporučení pro {{@cmo}}. Zeptej se na čísla, která chybí."
+            "en": "Sum up last week (Monday to Sunday) and state the dates the report covers. Use only the numbers you have for that period. Give the main metric against the goal, what went up and down, and one to three recommendations for {{@cmo}}. Compare with the week before only if you have its numbers under the same definition. List missing numbers and do not estimate them. If you have none, write only the list of what you need.",
+            "cs": "Shrň minulý týden (pondělí až neděle) a uveď data, za která report platí. Použij jen čísla, která k tomuto období máš. Uveď hlavní metriku proti cíli, co rostlo a co kleslo a jedno až tři doporučení pro {{@cmo}}. S předchozím týdnem srovnávej, jen když máš jeho čísla se stejnou definicí. Chybějící čísla vypiš a nedopočítávej je. Když nemáš žádná, napiš jen seznam toho, co potřebuješ dodat."
           },
           "to_chat": true,
           "continuity": true

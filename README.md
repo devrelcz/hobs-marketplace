@@ -47,6 +47,7 @@ teams/<id>/team.json           one team
 teams/<id>/souls/<key>.<lang>.md
 teams/<id>/cover.webp          the team's picture (docs/covers.md)
 teams/<id>/cover.prompt.txt    the prompt that made it
+docs/hobs.md                   how to write a Hob: SOUL, rules, job prompts
 tools/validate.mjs             checks everything, rebuilds index.json
 ```
 
@@ -73,6 +74,11 @@ See [schema/team.schema.json](schema/team.schema.json) for every field. In short
   app creates jobs switched off.
 - **Placeholders**: `{{@key}}` in a SOUL or a job prompt becomes `@handle` of
   that member after import, whatever handle it ended up with.
+  Every language of a SOUL or a job prompt names the same members.
+
+How to write a SOUL and a job prompt is in [docs/hobs.md](docs/hobs.md). A
+SOUL describes behaviour; it is not a permission. What a Hob can really do is
+set by the tools on the Hermes server.
 
 ## What an import does
 
