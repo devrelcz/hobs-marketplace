@@ -1,0 +1,12 @@
+Flat vector illustration for the cover card of a team in a mobile app marketplace. Wide 16:9 composition.
+
+The team is five friendly mascot characters. Each character is one simple solid-colored geometric shape with two tiny black dot eyes close together, no mouth, no nose, tiny stubby arms only where they hold something. They look like minimal app avatars, cute and calm.
+- Assistant: a soft violet circle in the middle, holding a small paper calendar with one day circled.
+- Chef: a pink teardrop shape wearing a tiny white chef hat, stirring a pot with a wooden spoon, a little steam rising.
+- Traveler: a teal horizontal pill shape with a small suitcase and a folded paper map, a tiny paper plane above.
+- Budget keeper: an amber rounded square next to a piggy bank with two coins.
+- Coach: a coral-orange triangle lifting a small dumbbell, a water bottle beside it.
+
+Setting: a cozy, tidy home suggested by a few simple props only: a window with a plant, a small kitchen shelf, a rug. Background soft warm off-white with moss green (#2F6B4A) and pale green (#CDEBD6) shapes, a few lantern-yellow (#F2B33D) highlights. Flat colors, very soft subtle shadows, generous negative space, all characters fully inside the frame with safe margins on every side, balanced group composition.
+
+No text, no letters, no numbers, no logos, no watermark, no UI screenshots, no people.

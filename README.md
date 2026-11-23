@@ -14,6 +14,7 @@ The teams live here and not in the app, so a new team needs no app release.
 | | Team | Members |
 | --- | --- | --- |
 | <img src="teams/dev-team/cover.webp" width="240" alt="Dev team"> | [Dev team](teams/dev-team/team.json) | Head of IT, analyst, developer, tester, DevOps |
+| <img src="teams/personal-team/cover.webp" width="240" alt="Personal team"> | [Personal team](teams/personal-team/team.json) | Assistant, chef, traveler, budget keeper, coach |
 
 ## How the app reads the catalog
 

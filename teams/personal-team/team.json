@@ -1,0 +1,195 @@
+{
+  "$schema": "../../schema/team.schema.json",
+  "schema": 1,
+  "id": "personal-team",
+  "version": "1.0.0",
+  "name": {
+    "en": "Personal team",
+    "cs": "Osobní tým"
+  },
+  "summary": {
+    "en": "Assistant, chef, traveler, budget keeper and coach.",
+    "cs": "Asistent, kuchař, cestovatel, rozpočtář a trenér."
+  },
+  "description": {
+    "en": "Help with everyday life. The assistant keeps your day in order and hands things to the others: the chef plans meals and shopping, the traveler plans trips, the budget keeper watches household spending and the coach keeps you moving.",
+    "cs": "Pomoc s každodenním životem. Asistent drží tvůj den v pořádku a předává věci ostatním: kuchař plánuje jídla a nákupy, cestovatel cesty, rozpočtář hlídá výdaje domácnosti a trenér tě udržuje v pohybu."
+  },
+  "cover": "cover.webp",
+  "tags": [
+    "personal",
+    "home"
+  ],
+  "folder": {
+    "en": "Personal",
+    "cs": "Osobní"
+  },
+  "group": {
+    "create": true,
+    "name": {
+      "en": "Personal team",
+      "cs": "Osobní tým"
+    }
+  },
+  "members": [
+    {
+      "key": "assistant",
+      "handle": "assistant",
+      "title": {
+        "en": "Assistant",
+        "cs": "Asistent"
+      },
+      "description": {
+        "en": "Keeps your day in order: plans, reminders, notes and errands.",
+        "cs": "Drží tvůj den v pořádku: plány, připomínky, poznámky a pochůzky."
+      },
+      "face": {
+        "shape": "circle",
+        "color": "#C399DD"
+      },
+      "soul": {
+        "en": "souls/assistant.en.md",
+        "cs": "souls/assistant.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Morning brief",
+            "cs": "Ranní přehled"
+          },
+          "schedule": "0 7 * * 1-5",
+          "prompt": {
+            "en": "Write a short plan for today from what you know from our conversations: tasks, deadlines and anything I asked you to remind me of. End with one question about what to add. Under 120 words.",
+            "cs": "Napiš krátký plán na dnešek podle toho, co víš z našich rozhovorů: úkoly, termíny a cokoli, co ti mám připomenout. Zakonči jednou otázkou, co přidat. Nejvýš 120 slov."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "chef",
+      "handle": "chef",
+      "title": {
+        "en": "Chef",
+        "cs": "Kuchař"
+      },
+      "description": {
+        "en": "Plans meals for the week, suggests recipes and writes the shopping list.",
+        "cs": "Plánuje jídla na týden, navrhuje recepty a píše nákupní seznam."
+      },
+      "face": {
+        "shape": "drop",
+        "color": "#FA99AA"
+      },
+      "soul": {
+        "en": "souls/chef.en.md",
+        "cs": "souls/chef.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly menu",
+            "cs": "Jídelníček na týden"
+          },
+          "schedule": "0 17 * * 0",
+          "prompt": {
+            "en": "Suggest dinners for the coming week that fit what you know about my tastes and time, with one shopping list grouped by shop section. Ask {{@budget}} to keep an eye on the cost if it runs high.",
+            "cs": "Navrhni večeře na příští týden podle toho, co víš o mých chutích a čase, a k nim jeden nákupní seznam seřazený podle oddělení obchodu. Když to vyjde draho, dej vědět {{@budget}}."
+          },
+          "to_chat": true
+        }
+      ]
+    },
+    {
+      "key": "traveler",
+      "handle": "traveler",
+      "title": {
+        "en": "Traveler",
+        "cs": "Cestovatel"
+      },
+      "description": {
+        "en": "Plans trips: routes, connections, places to stay and what to pack.",
+        "cs": "Plánuje cesty: trasy, spoje, ubytování a co si zabalit."
+      },
+      "face": {
+        "shape": "pill",
+        "color": "#89C5A8"
+      },
+      "soul": {
+        "en": "souls/traveler.en.md",
+        "cs": "souls/traveler.cs.md"
+      }
+    },
+    {
+      "key": "budget",
+      "handle": "budget",
+      "title": {
+        "en": "Budget keeper",
+        "cs": "Rozpočtář"
+      },
+      "description": {
+        "en": "Keeps the household budget: spending, bills and savings goals.",
+        "cs": "Vede rozpočet domácnosti: výdaje, platby a cíle spoření."
+      },
+      "face": {
+        "shape": "squircle",
+        "color": "#FDB74C"
+      },
+      "soul": {
+        "en": "souls/budget.en.md",
+        "cs": "souls/budget.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Monthly budget",
+            "cs": "Měsíční rozpočet"
+          },
+          "schedule": "0 9 1 * *",
+          "prompt": {
+            "en": "Sum up last month from the spending I told you about: totals by category, what changed against the month before and the bills coming this month. Ask me for anything missing.",
+            "cs": "Shrň minulý měsíc podle výdajů, které jsem ti řekl: součty podle kategorií, co se změnilo proti předchozímu měsíci a jaké platby přijdou tento měsíc. Zeptej se na to, co chybí."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "coach",
+      "handle": "coach",
+      "title": {
+        "en": "Coach",
+        "cs": "Trenér"
+      },
+      "description": {
+        "en": "Plans exercise that fits your week and cheers you on.",
+        "cs": "Plánuje pohyb, který se vejde do tvého týdne, a fandí ti."
+      },
+      "face": {
+        "shape": "triangle",
+        "color": "#FE825A"
+      },
+      "soul": {
+        "en": "souls/coach.en.md",
+        "cs": "souls/coach.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly training plan",
+            "cs": "Týdenní plán pohybu"
+          },
+          "schedule": "0 8 * * 1",
+          "prompt": {
+            "en": "Plan this week's exercise around what you know about my schedule and form: three to four short sessions, each with what to do and how long. Check with {{@assistant}} which days are busy.",
+            "cs": "Naplánuj pohyb na tento týden podle toho, co víš o mém programu a kondici: tři až čtyři krátké tréninky, u každého co dělat a jak dlouho. Ověř si s {{@assistant}}, které dny jsou nabité."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,25 @@
         "software",
         "engineering"
       ]
+    },
+    {
+      "id": "personal-team",
+      "version": "1.0.0",
+      "path": "teams/personal-team/team.json",
+      "cover": "teams/personal-team/cover.webp",
+      "name": {
+        "en": "Personal team",
+        "cs": "Osobní tým"
+      },
+      "summary": {
+        "en": "Assistant, chef, traveler, budget keeper and coach.",
+        "cs": "Asistent, kuchař, cestovatel, rozpočtář a trenér."
+      },
+      "members": 5,
+      "tags": [
+        "personal",
+        "home"
+      ]
     }
   ]
 }
