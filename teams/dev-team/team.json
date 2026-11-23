@@ -2,7 +2,7 @@
   "$schema": "../../schema/team.schema.json",
   "schema": 1,
   "id": "dev-team",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Dev team",
     "cs": "Vývojový tým"
@@ -15,7 +15,11 @@
     "en": "A small software team that takes an idea from requirements to a release. The head of IT sets priorities and splits the work, the analyst writes the requirements, the developer builds, the tester tries to break it and DevOps ships it.",
     "cs": "Malý softwarový tým, který dovede nápad od požadavků až k vydání. Šéf IT určuje priority a rozděluje práci, analytik sepisuje požadavky, programátor staví, tester se to snaží rozbít a DevOps to nasadí."
   },
-  "tags": ["software", "engineering"],
+  "cover": "cover.webp",
+  "tags": [
+    "software",
+    "engineering"
+  ],
   "folder": {
     "en": "Dev team",
     "cs": "Vývoj"
@@ -40,7 +44,8 @@
         "cs": "Určuje priority, rozhoduje o architektuře a rozděluje práci v týmu."
       },
       "face": {
-        "shape": "blobatar:cto:hexagon"
+        "shape": "hexagon",
+        "color": "#5A5EB9"
       },
       "soul": {
         "en": "souls/cto.en.md",
@@ -74,7 +79,8 @@
         "cs": "Mění nápady v jasné požadavky, user stories a akceptační kritéria."
       },
       "face": {
-        "shape": "blobatar:analyst:round"
+        "shape": "circle",
+        "color": "#FE7867"
       },
       "soul": {
         "en": "souls/analyst.en.md",
@@ -93,7 +99,8 @@
         "cs": "Navrhuje a píše kód, dělá review změn a vysvětluje technické kompromisy."
       },
       "face": {
-        "shape": "blobatar:developer:boxy"
+        "shape": "squircle",
+        "color": "#7DB1E4"
       },
       "soul": {
         "en": "souls/developer.en.md",
@@ -112,7 +119,8 @@
         "cs": "Hledá případy, na které nikdo nemyslel, píše testovací plány a hlásí chyby tak, aby šly zopakovat."
       },
       "face": {
-        "shape": "blobatar:tester:triangle"
+        "shape": "triangle",
+        "color": "#FEBF54"
       },
       "soul": {
         "en": "souls/tester.en.md",
@@ -131,7 +139,8 @@
         "cs": "Má na starost buildy, nasazení, monitoring a bezpečnost vydání."
       },
       "face": {
-        "shape": "blobatar:devops:cloud"
+        "shape": "cloud",
+        "color": "#96CE9F"
       },
       "soul": {
         "en": "souls/devops.en.md",

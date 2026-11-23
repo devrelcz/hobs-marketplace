@@ -1,0 +1,12 @@
+Flat vector illustration for the cover card of a team in a mobile app marketplace. Wide 16:9 composition.
+
+The team is five friendly mascot characters. Each character is one simple solid-colored geometric shape with two tiny black dot eyes close together, no mouth, no nose, tiny stubby arms only where they hold something. They look like minimal app avatars, cute and calm.
+- Head of IT: a deep indigo hexagon, standing slightly in front, pointing at a small roadmap board with three sticky notes.
+- Analyst: a coral circle holding a clipboard with a checklist.
+- Developer: a sky-blue rounded square sitting at an open laptop, small curly code brackets floating above.
+- Tester: a warm yellow triangle with a magnifying glass, inspecting a tiny cartoon bug.
+- DevOps: a mint-green cloud shape beside a small server rack, a little rocket lifting off behind it.
+
+Setting: a tidy, cozy modern workspace suggested by a few simple props only. Background soft warm off-white with moss green (#2F6B4A) and pale green (#CDEBD6) shapes, a few lantern-yellow (#F2B33D) highlights. Flat colors, very soft subtle shadows, generous negative space, all characters fully inside the frame with safe margins on every side, balanced group composition.
+
+No text, no letters, no numbers, no logos, no watermark, no UI screenshots, no people.

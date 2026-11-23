@@ -4,15 +4,27 @@
   "title": "Hobs team",
   "description": "A ready-made team of Hobs that Hermes Hobs imports in one go: one Hermes profile per member, a folder holding them and a group chat seating them.",
   "type": "object",
-  "required": ["schema", "id", "version", "name", "summary", "members"],
+  "required": [
+    "schema",
+    "id",
+    "version",
+    "name",
+    "summary",
+    "cover",
+    "members"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
     "schema": {
       "description": "Format version of this file. The app skips teams with a schema it does not know.",
       "const": 1
     },
-    "id": { "$ref": "#/definitions/slug" },
+    "id": {
+      "$ref": "#/definitions/slug"
+    },
     "version": {
       "description": "Semantic version of the team. Bump it on every change.",
       "type": "string",
@@ -23,12 +35,25 @@
       "type": "string",
       "pattern": "^\\d+\\.\\d+\\.\\d+$"
     },
-    "name": { "$ref": "#/definitions/text" },
-    "summary": { "$ref": "#/definitions/text" },
-    "description": { "$ref": "#/definitions/text" },
+    "name": {
+      "$ref": "#/definitions/text"
+    },
+    "summary": {
+      "$ref": "#/definitions/text"
+    },
+    "description": {
+      "$ref": "#/definitions/text"
+    },
+    "cover": {
+      "description": "The team's picture, relative to this team.json: a WebP, 16:9, at least 1200 px wide, at most 300 KB. See docs/covers.md for the house style.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_./-]+\\.webp$"
+    },
     "tags": {
       "type": "array",
-      "items": { "$ref": "#/definitions/slug" },
+      "items": {
+        "$ref": "#/definitions/slug"
+      },
       "uniqueItems": true
     },
     "folder": {
@@ -40,8 +65,13 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "create": { "type": "boolean", "default": true },
-        "name": { "$ref": "#/definitions/text" }
+        "create": {
+          "type": "boolean",
+          "default": true
+        },
+        "name": {
+          "$ref": "#/definitions/text"
+        }
       }
     },
     "members": {
@@ -49,7 +79,9 @@
       "type": "array",
       "minItems": 2,
       "maxItems": 6,
-      "items": { "$ref": "#/definitions/member" }
+      "items": {
+        "$ref": "#/definitions/member"
+      }
     }
   },
   "definitions": {
@@ -61,38 +93,62 @@
       "description": "Preferred Hermes profile name. The app adds -2, -3… when it is taken.",
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
-      "not": { "const": "default" }
+      "not": {
+        "const": "default"
+      }
     },
     "text": {
       "description": "Text per language. English is required and is the fallback.",
       "type": "object",
-      "required": ["en"],
+      "required": [
+        "en"
+      ],
       "additionalProperties": false,
       "patternProperties": {
-        "^[a-z]{2}$": { "type": "string", "minLength": 1 }
+        "^[a-z]{2}$": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "path": {
       "description": "File path relative to this team.json, per language. English is required.",
       "type": "object",
-      "required": ["en"],
+      "required": [
+        "en"
+      ],
       "additionalProperties": false,
       "patternProperties": {
-        "^[a-z]{2}$": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.md$" }
+        "^[a-z]{2}$": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_./-]+\\.md$"
+        }
       }
     },
     "member": {
       "type": "object",
-      "required": ["key", "handle", "title", "description", "soul"],
+      "required": [
+        "key",
+        "handle",
+        "title",
+        "description",
+        "soul"
+      ],
       "additionalProperties": false,
       "properties": {
         "key": {
           "description": "Stable id inside the team. SOULs and prompts address the member as {{@key}}.",
           "$ref": "#/definitions/slug"
         },
-        "handle": { "$ref": "#/definitions/handle" },
-        "title": { "$ref": "#/definitions/text" },
-        "description": { "$ref": "#/definitions/text" },
+        "handle": {
+          "$ref": "#/definitions/handle"
+        },
+        "title": {
+          "$ref": "#/definitions/text"
+        },
+        "description": {
+          "$ref": "#/definitions/text"
+        },
         "face": {
           "type": "object",
           "additionalProperties": false,
@@ -109,7 +165,9 @@
             }
           }
         },
-        "soul": { "$ref": "#/definitions/path" },
+        "soul": {
+          "$ref": "#/definitions/path"
+        },
         "model": {
           "description": "A hint, not a requirement: the first preferred model the server offers wins, otherwise the fallback.",
           "type": "object",
@@ -123,29 +181,44 @@
                 "pattern": "^[^/\\s]+/\\S+$"
               }
             },
-            "fallback": { "enum": ["inherit"], "default": "inherit" }
+            "fallback": {
+              "enum": [
+                "inherit"
+              ],
+              "default": "inherit"
+            }
           }
         },
         "jobs": {
           "description": "Scheduled jobs. The app creates them switched off.",
           "type": "array",
           "maxItems": 5,
-          "items": { "$ref": "#/definitions/job" }
+          "items": {
+            "$ref": "#/definitions/job"
+          }
         }
       }
     },
     "job": {
       "type": "object",
-      "required": ["name", "schedule", "prompt"],
+      "required": [
+        "name",
+        "schedule",
+        "prompt"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "$ref": "#/definitions/text" },
+        "name": {
+          "$ref": "#/definitions/text"
+        },
         "schedule": {
           "description": "Five-field cron expression or 'every <n>m|h|d'.",
           "type": "string",
           "pattern": "^((\\S+\\s+){4}\\S+|every \\d+[mhd])$"
         },
-        "prompt": { "$ref": "#/definitions/text" },
+        "prompt": {
+          "$ref": "#/definitions/text"
+        },
         "to_chat": {
           "description": "Send each run's output to the Hob's chat.",
           "type": "boolean",

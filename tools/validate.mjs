@@ -73,6 +73,44 @@ function checkSchedule(where, schedule) {
   });
 }
 
+const COVER_MAX_BYTES = 300 * 1024;
+const COVER_MIN_WIDTH = 1200;
+
+// Width and height of a WebP file (lossy VP8, lossless VP8L or extended
+// VP8X), or null when the bytes are not a WebP.
+function webpSize(buf) {
+  if (buf.length < 30 || buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') {
+    return null;
+  }
+  const chunk = buf.toString('ascii', 12, 16);
+  if (chunk === 'VP8X') {
+    return { width: 1 + buf.readUIntLE(24, 3), height: 1 + buf.readUIntLE(27, 3) };
+  }
+  if (chunk === 'VP8 ') {
+    return { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+  }
+  if (chunk === 'VP8L') {
+    const bits = buf.readUInt32LE(21);
+    return { width: 1 + (bits & 0x3fff), height: 1 + ((bits >> 14) & 0x3fff) };
+  }
+  return null;
+}
+
+function checkCover(where, dir, rel) {
+  const path = join(root, 'teams', dir, rel);
+  const coverWhere = relative(root, path);
+  if (!path.startsWith(join(root, 'teams', dir) + '/')) return fail(where, 'cover points outside the team folder');
+  if (!existsSync(path)) return fail(where, `cover ${coverWhere} does not exist`);
+  const buf = readFileSync(path);
+  if (buf.length > COVER_MAX_BYTES) fail(coverWhere, `is ${buf.length} bytes, the limit is ${COVER_MAX_BYTES}`);
+  const size = webpSize(buf);
+  if (!size) return fail(coverWhere, 'is not a WebP image');
+  if (size.width < COVER_MIN_WIDTH) fail(coverWhere, `is ${size.width} px wide, at least ${COVER_MIN_WIDTH} px is needed`);
+  if (Math.abs(size.width / size.height - 16 / 9) > 0.02) {
+    fail(coverWhere, `is ${size.width}x${size.height}; covers are 16:9`);
+  }
+}
+
 function checkPlaceholders(where, text, keys) {
   for (const [, inner] of text.matchAll(PLACEHOLDER)) {
     const key = inner.startsWith('@') ? inner.slice(1) : null;
@@ -94,6 +132,7 @@ function checkTeam(dir) {
   if (!validateTeam(team)) return schemaErrors(where, validateTeam);
 
   if (team.id !== dir) fail(where, `id "${team.id}" must match its folder "${dir}"`);
+  checkCover(where, dir, team.cover);
 
   const languages = Object.keys(team.name);
   const covers = (field, text) => {
@@ -155,6 +194,7 @@ function checkTeam(dir) {
     id: team.id,
     version: team.version,
     path: `teams/${dir}/team.json`,
+    cover: `teams/${dir}/${team.cover.replace(/^\.\//, '')}`,
     name: team.name,
     summary: team.summary,
     members: team.members.length,

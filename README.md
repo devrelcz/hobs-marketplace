@@ -11,9 +11,9 @@ The teams live here and not in the app, so a new team needs no app release.
 
 ## Teams
 
-| Team | Members |
-| --- | --- |
-| [Dev team](teams/dev-team/team.json) | Head of IT, analyst, developer, tester, DevOps |
+| | Team | Members |
+| --- | --- | --- |
+| <img src="teams/dev-team/cover.webp" width="240" alt="Dev team"> | [Dev team](teams/dev-team/team.json) | Head of IT, analyst, developer, tester, DevOps |
 
 ## How the app reads the catalog
 
@@ -23,13 +23,14 @@ The app fetches the catalog through jsDelivr, pinned to a major-version tag:
 https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/index.json
 https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/teams/<id>/team.json
 https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/teams/<id>/souls/<file>.md
+https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/teams/<id>/cover.webp
 ```
 
 Nothing reaches users until a new `v1.x.y` tag is pushed. A breaking change to
 the format bumps `schema` and moves to a `v2` tag, so older apps keep reading
 `v1`.
 
-`index.json` holds one card per team for the list. The app loads a team's
+`index.json` holds one card per team for the list, with the path to its cover. The app loads a team's
 `team.json` and SOUL files only when you open it.
 
 ## Layout
@@ -40,6 +41,8 @@ schema/team.schema.json        format of a team
 schema/index.schema.json       format of the catalog
 teams/<id>/team.json           one team
 teams/<id>/souls/<key>.<lang>.md
+teams/<id>/cover.webp          the team's picture (docs/covers.md)
+teams/<id>/cover.prompt.txt    the prompt that made it
 tools/validate.mjs             checks everything, rebuilds index.json
 ```
 
@@ -50,6 +53,8 @@ See [schema/team.schema.json](schema/team.schema.json) for every field. In short
 - **Texts** are objects keyed by language: `{"en": "…", "cs": "…"}`. English is
   required and is the fallback. Every text in a team covers the same languages
   as the team's `name`.
+- **cover**: a WebP picture, 16:9, at least 1200 px wide, at most 300 KB,
+  in the [house style](docs/covers.md).
 - **members**: two to six, the most a group chat seats. Each has a `key` (stable
   inside the team), a preferred `handle` (the Hermes profile name), `title`,
   `description`, `soul` (a SOUL.md per language) and optionally `face`, `model`
@@ -81,7 +86,8 @@ If a step fails, the app offers to finish the rest or remove what it created.
 
 ## Adding a team
 
-1. Create `teams/<id>/team.json` and its SOUL files. Copy the dev team as a start.
+1. Create `teams/<id>/team.json`, its SOUL files and its
+   [cover](docs/covers.md). Copy the dev team as a start.
 2. Run the checks and rebuild the index:
 
    ```bash
