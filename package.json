@@ -1,0 +1,14 @@
+{
+  "name": "hobs-marketplace",
+  "private": true,
+  "description": "Ready-made teams of Hobs for Hermes Hobs.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "index": "node tools/validate.mjs --write"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}

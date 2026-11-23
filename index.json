@@ -1,0 +1,24 @@
+{
+  "$schema": "./schema/index.schema.json",
+  "schema": 1,
+  "teams": [
+    {
+      "id": "dev-team",
+      "version": "1.0.0",
+      "path": "teams/dev-team/team.json",
+      "name": {
+        "en": "Dev team",
+        "cs": "Vývojový tým"
+      },
+      "summary": {
+        "en": "Head of IT, analyst, developer, tester and DevOps engineer.",
+        "cs": "Šéf IT, analytik, programátor, tester a DevOps."
+      },
+      "members": 5,
+      "tags": [
+        "software",
+        "engineering"
+      ]
+    }
+  ]
+}

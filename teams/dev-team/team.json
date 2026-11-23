@@ -1,0 +1,142 @@
+{
+  "$schema": "../../schema/team.schema.json",
+  "schema": 1,
+  "id": "dev-team",
+  "version": "1.0.0",
+  "name": {
+    "en": "Dev team",
+    "cs": "Vývojový tým"
+  },
+  "summary": {
+    "en": "Head of IT, analyst, developer, tester and DevOps engineer.",
+    "cs": "Šéf IT, analytik, programátor, tester a DevOps."
+  },
+  "description": {
+    "en": "A small software team that takes an idea from requirements to a release. The head of IT sets priorities and splits the work, the analyst writes the requirements, the developer builds, the tester tries to break it and DevOps ships it.",
+    "cs": "Malý softwarový tým, který dovede nápad od požadavků až k vydání. Šéf IT určuje priority a rozděluje práci, analytik sepisuje požadavky, programátor staví, tester se to snaží rozbít a DevOps to nasadí."
+  },
+  "tags": ["software", "engineering"],
+  "folder": {
+    "en": "Dev team",
+    "cs": "Vývoj"
+  },
+  "group": {
+    "create": true,
+    "name": {
+      "en": "Dev team",
+      "cs": "Vývojový tým"
+    }
+  },
+  "members": [
+    {
+      "key": "cto",
+      "handle": "cto",
+      "title": {
+        "en": "Head of IT",
+        "cs": "Šéf IT"
+      },
+      "description": {
+        "en": "Sets priorities, decides the architecture and splits the work across the team.",
+        "cs": "Určuje priority, rozhoduje o architektuře a rozděluje práci v týmu."
+      },
+      "face": {
+        "shape": "blobatar:cto:hexagon"
+      },
+      "soul": {
+        "en": "souls/cto.en.md",
+        "cs": "souls/cto.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly plan",
+            "cs": "Týdenní plán"
+          },
+          "schedule": "0 8 * * 1",
+          "prompt": {
+            "en": "Write this week's plan for the team: the three most important goals, who owns each of them ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) and the risks you see. Keep it under 200 words.",
+            "cs": "Napiš plán týmu na tento týden: tři nejdůležitější cíle, kdo za který odpovídá ({{@analyst}}, {{@developer}}, {{@tester}}, {{@devops}}) a jaká vidíš rizika. Nejvýš 200 slov."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "analyst",
+      "handle": "analyst",
+      "title": {
+        "en": "Analyst",
+        "cs": "Analytik"
+      },
+      "description": {
+        "en": "Turns ideas into clear requirements, user stories and acceptance criteria.",
+        "cs": "Mění nápady v jasné požadavky, user stories a akceptační kritéria."
+      },
+      "face": {
+        "shape": "blobatar:analyst:round"
+      },
+      "soul": {
+        "en": "souls/analyst.en.md",
+        "cs": "souls/analyst.cs.md"
+      }
+    },
+    {
+      "key": "developer",
+      "handle": "developer",
+      "title": {
+        "en": "Developer",
+        "cs": "Programátor"
+      },
+      "description": {
+        "en": "Designs and writes the code, reviews changes and explains technical trade-offs.",
+        "cs": "Navrhuje a píše kód, dělá review změn a vysvětluje technické kompromisy."
+      },
+      "face": {
+        "shape": "blobatar:developer:boxy"
+      },
+      "soul": {
+        "en": "souls/developer.en.md",
+        "cs": "souls/developer.cs.md"
+      }
+    },
+    {
+      "key": "tester",
+      "handle": "tester",
+      "title": {
+        "en": "Tester",
+        "cs": "Tester"
+      },
+      "description": {
+        "en": "Finds the cases nobody thought of, writes test plans and reports bugs others can reproduce.",
+        "cs": "Hledá případy, na které nikdo nemyslel, píše testovací plány a hlásí chyby tak, aby šly zopakovat."
+      },
+      "face": {
+        "shape": "blobatar:tester:triangle"
+      },
+      "soul": {
+        "en": "souls/tester.en.md",
+        "cs": "souls/tester.cs.md"
+      }
+    },
+    {
+      "key": "devops",
+      "handle": "devops",
+      "title": {
+        "en": "DevOps",
+        "cs": "DevOps"
+      },
+      "description": {
+        "en": "Owns builds, deployments, monitoring and the safety of releases.",
+        "cs": "Má na starost buildy, nasazení, monitoring a bezpečnost vydání."
+      },
+      "face": {
+        "shape": "blobatar:devops:cloud"
+      },
+      "soul": {
+        "en": "souls/devops.en.md",
+        "cs": "souls/devops.cs.md"
+      }
+    }
+  ]
+}

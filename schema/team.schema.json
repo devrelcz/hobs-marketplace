@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/schema/team.schema.json",
+  "title": "Hobs team",
+  "description": "A ready-made team of Hobs that Hermes Hobs imports in one go: one Hermes profile per member, a folder holding them and a group chat seating them.",
+  "type": "object",
+  "required": ["schema", "id", "version", "name", "summary", "members"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema": {
+      "description": "Format version of this file. The app skips teams with a schema it does not know.",
+      "const": 1
+    },
+    "id": { "$ref": "#/definitions/slug" },
+    "version": {
+      "description": "Semantic version of the team. Bump it on every change.",
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "min_app": {
+      "description": "Oldest Hermes Hobs version that can import this team.",
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "name": { "$ref": "#/definitions/text" },
+    "summary": { "$ref": "#/definitions/text" },
+    "description": { "$ref": "#/definitions/text" },
+    "tags": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/slug" },
+      "uniqueItems": true
+    },
+    "folder": {
+      "description": "Name of the folder the members go into. Defaults to the team name.",
+      "$ref": "#/definitions/text"
+    },
+    "group": {
+      "description": "The group chat seating every member.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "create": { "type": "boolean", "default": true },
+        "name": { "$ref": "#/definitions/text" }
+      }
+    },
+    "members": {
+      "description": "Two to six Hobs: a group chat seats at most six.",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": { "$ref": "#/definitions/member" }
+    }
+  },
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
+    "handle": {
+      "description": "Preferred Hermes profile name. The app adds -2, -3… when it is taken.",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$",
+      "not": { "const": "default" }
+    },
+    "text": {
+      "description": "Text per language. English is required and is the fallback.",
+      "type": "object",
+      "required": ["en"],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z]{2}$": { "type": "string", "minLength": 1 }
+      }
+    },
+    "path": {
+      "description": "File path relative to this team.json, per language. English is required.",
+      "type": "object",
+      "required": ["en"],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z]{2}$": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.md$" }
+      }
+    },
+    "member": {
+      "type": "object",
+      "required": ["key", "handle", "title", "description", "soul"],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "description": "Stable id inside the team. SOULs and prompts address the member as {{@key}}.",
+          "$ref": "#/definitions/slug"
+        },
+        "handle": { "$ref": "#/definitions/handle" },
+        "title": { "$ref": "#/definitions/text" },
+        "description": { "$ref": "#/definitions/text" },
+        "face": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "shape": {
+              "description": "circle, blob, squircle, pill, triangle, hexagon, cloud, drop, or blobatar[:<seed>[:<kind>]].",
+              "type": "string",
+              "pattern": "^(circle|blob|squircle|pill|triangle|hexagon|cloud|drop|blobatar(:[A-Za-z0-9_-]+(:(round|organic|boxy|capsule|nub|cloud|droplet|hexagon|sun|triangle))?)?)$"
+            },
+            "color": {
+              "description": "#RRGGBB or hsl(H S% L%). A blobatar brings its own colors and ignores it.",
+              "type": "string",
+              "pattern": "^(#[0-9A-Fa-f]{6}|hsl\\(\\d{1,3} \\d{1,3}% \\d{1,3}%\\))$"
+            }
+          }
+        },
+        "soul": { "$ref": "#/definitions/path" },
+        "model": {
+          "description": "A hint, not a requirement: the first preferred model the server offers wins, otherwise the fallback.",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "prefer": {
+              "type": "array",
+              "items": {
+                "description": "provider/model",
+                "type": "string",
+                "pattern": "^[^/\\s]+/\\S+$"
+              }
+            },
+            "fallback": { "enum": ["inherit"], "default": "inherit" }
+          }
+        },
+        "jobs": {
+          "description": "Scheduled jobs. The app creates them switched off.",
+          "type": "array",
+          "maxItems": 5,
+          "items": { "$ref": "#/definitions/job" }
+        }
+      }
+    },
+    "job": {
+      "type": "object",
+      "required": ["name", "schedule", "prompt"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "#/definitions/text" },
+        "schedule": {
+          "description": "Five-field cron expression or 'every <n>m|h|d'.",
+          "type": "string",
+          "pattern": "^((\\S+\\s+){4}\\S+|every \\d+[mhd])$"
+        },
+        "prompt": { "$ref": "#/definitions/text" },
+        "to_chat": {
+          "description": "Send each run's output to the Hob's chat.",
+          "type": "boolean",
+          "default": true
+        },
+        "continuity": {
+          "description": "Show each run the previous run's output.",
+          "type": "boolean",
+          "default": false
+        },
+        "repeat": {
+          "description": "Stop after this many runs.",
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}
