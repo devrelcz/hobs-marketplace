@@ -1,0 +1,166 @@
+{
+  "$schema": "../../schema/team.schema.json",
+  "schema": 1,
+  "id": "startup-team",
+  "version": "1.0.0",
+  "name": {
+    "en": "Startup team",
+    "cs": "Startup"
+  },
+  "summary": {
+    "en": "CEO, product manager, growth, legal and finance.",
+    "cs": "CEO, produkťák, growth, právník a finance."
+  },
+  "description": {
+    "en": "A founding team for an early company. The CEO sets the direction and priorities, the product manager decides what to build, growth finds customers, legal drafts and reviews documents and finance watches the runway.",
+    "cs": "Zakladatelský tým pro začínající firmu. CEO určuje směr a priority, produkťák rozhoduje, co stavět, growth hledá zákazníky, právník připravuje a kontroluje dokumenty a finance hlídají runway."
+  },
+  "cover": "cover.webp",
+  "tags": [
+    "startup",
+    "business"
+  ],
+  "folder": {
+    "en": "Startup",
+    "cs": "Startup"
+  },
+  "group": {
+    "create": true,
+    "name": {
+      "en": "Startup team",
+      "cs": "Startup"
+    }
+  },
+  "members": [
+    {
+      "key": "ceo",
+      "handle": "ceo",
+      "title": {
+        "en": "CEO",
+        "cs": "CEO"
+      },
+      "description": {
+        "en": "Sets vision and priorities, makes the hard calls and prepares investor talks.",
+        "cs": "Určuje vizi a priority, dělá těžká rozhodnutí a připravuje jednání s investory."
+      },
+      "face": {
+        "shape": "pill",
+        "color": "#5C639F"
+      },
+      "soul": {
+        "en": "souls/ceo.en.md",
+        "cs": "souls/ceo.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly priorities",
+            "cs": "Týdenní priority"
+          },
+          "schedule": "0 8 * * 1",
+          "prompt": {
+            "en": "Set this week's three priorities from what you know about the company, each with its owner ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) and how we will know it is done. Under 150 words.",
+            "cs": "Urči tři priority na tento týden podle toho, co víš o firmě, u každé vlastníka ({{@product}}, {{@growth}}, {{@legal}}, {{@finance}}) a jak poznáme, že je hotová. Nejvýš 150 slov."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "product",
+      "handle": "product",
+      "title": {
+        "en": "Product manager",
+        "cs": "Produkťák"
+      },
+      "description": {
+        "en": "Talks to users, keeps the roadmap and writes what to build and why.",
+        "cs": "Mluví s uživateli, vede roadmapu a píše, co stavět a proč."
+      },
+      "face": {
+        "shape": "circle",
+        "color": "#B99BD8"
+      },
+      "soul": {
+        "en": "souls/product.en.md",
+        "cs": "souls/product.cs.md"
+      }
+    },
+    {
+      "key": "growth",
+      "handle": "growth",
+      "title": {
+        "en": "Growth",
+        "cs": "Growth"
+      },
+      "description": {
+        "en": "Finds customers with small, measured experiments.",
+        "cs": "Hledá zákazníky pomocí malých měřených experimentů."
+      },
+      "face": {
+        "shape": "triangle",
+        "color": "#72A375"
+      },
+      "soul": {
+        "en": "souls/growth.en.md",
+        "cs": "souls/growth.cs.md"
+      }
+    },
+    {
+      "key": "legal",
+      "handle": "legal",
+      "title": {
+        "en": "Legal",
+        "cs": "Právník"
+      },
+      "description": {
+        "en": "Drafts and reviews contracts, terms and privacy documents.",
+        "cs": "Připravuje a kontroluje smlouvy, obchodní podmínky a dokumenty o soukromí."
+      },
+      "face": {
+        "shape": "squircle",
+        "color": "#72727C"
+      },
+      "soul": {
+        "en": "souls/legal.en.md",
+        "cs": "souls/legal.cs.md"
+      }
+    },
+    {
+      "key": "finance",
+      "handle": "finance",
+      "title": {
+        "en": "Finance",
+        "cs": "Finance"
+      },
+      "description": {
+        "en": "Keeps the budget, the runway and the unit economics.",
+        "cs": "Vede rozpočet, runway a jednotkovou ekonomiku."
+      },
+      "face": {
+        "shape": "hexagon",
+        "color": "#FEC358"
+      },
+      "soul": {
+        "en": "souls/finance.en.md",
+        "cs": "souls/finance.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Monthly runway",
+            "cs": "Měsíční runway"
+          },
+          "schedule": "0 9 1 * *",
+          "prompt": {
+            "en": "Sum up last month from the numbers I shared: income, costs by category, cash at the end and runway in months. Say what changed and warn {{@ceo}} if runway is under six months.",
+            "cs": "Shrň minulý měsíc z čísel, která jsem ti dal: příjmy, náklady podle kategorií, hotovost na konci a runway v měsících. Řekni, co se změnilo, a varuj {{@ceo}}, pokud je runway pod šest měsíců."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    }
+  ]
+}

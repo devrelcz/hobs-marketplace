@@ -22,6 +22,44 @@
       ]
     },
     {
+      "id": "editorial-team",
+      "version": "1.0.0",
+      "path": "teams/editorial-team/team.json",
+      "cover": "teams/editorial-team/cover.webp",
+      "name": {
+        "en": "Editorial team",
+        "cs": "Redakce"
+      },
+      "summary": {
+        "en": "Editor in chief, writer, proofreader, illustrator and fact-checker.",
+        "cs": "Šéfredaktor, autor, korektor, ilustrátor a ověřovatel faktů."
+      },
+      "members": 5,
+      "tags": [
+        "writing",
+        "content"
+      ]
+    },
+    {
+      "id": "marketing-team",
+      "version": "1.0.0",
+      "path": "teams/marketing-team/team.json",
+      "cover": "teams/marketing-team/cover.webp",
+      "name": {
+        "en": "Marketing team",
+        "cs": "Marketingový tým"
+      },
+      "summary": {
+        "en": "Head of marketing, copywriter, SEO, social media and analyst.",
+        "cs": "Šéf marketingu, copywriter, SEO, sociální sítě a analytik."
+      },
+      "members": 5,
+      "tags": [
+        "marketing",
+        "business"
+      ]
+    },
+    {
       "id": "personal-team",
       "version": "1.0.0",
       "path": "teams/personal-team/team.json",
@@ -38,6 +76,25 @@
       "tags": [
         "personal",
         "home"
+      ]
+    },
+    {
+      "id": "startup-team",
+      "version": "1.0.0",
+      "path": "teams/startup-team/team.json",
+      "cover": "teams/startup-team/cover.webp",
+      "name": {
+        "en": "Startup team",
+        "cs": "Startup"
+      },
+      "summary": {
+        "en": "CEO, product manager, growth, legal and finance.",
+        "cs": "CEO, produkťák, growth, právník a finance."
+      },
+      "members": 5,
+      "tags": [
+        "startup",
+        "business"
       ]
     }
   ]

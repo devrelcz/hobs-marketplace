@@ -1,0 +1,180 @@
+{
+  "$schema": "../../schema/team.schema.json",
+  "schema": 1,
+  "id": "marketing-team",
+  "version": "1.0.0",
+  "name": {
+    "en": "Marketing team",
+    "cs": "Marketingový tým"
+  },
+  "summary": {
+    "en": "Head of marketing, copywriter, SEO, social media and analyst.",
+    "cs": "Šéf marketingu, copywriter, SEO, sociální sítě a analytik."
+  },
+  "description": {
+    "en": "A small marketing department. The head of marketing sets the positioning and the campaign plan, the copywriter writes, the SEO specialist brings search traffic, the social media manager runs the channels and the analyst measures what works.",
+    "cs": "Malé marketingové oddělení. Šéf marketingu určuje positioning a plán kampaní, copywriter píše, SEO specialista přivádí návštěvy z vyhledávání, správce sociálních sítí vede kanály a analytik měří, co funguje."
+  },
+  "cover": "cover.webp",
+  "tags": [
+    "marketing",
+    "business"
+  ],
+  "folder": {
+    "en": "Marketing",
+    "cs": "Marketing"
+  },
+  "group": {
+    "create": true,
+    "name": {
+      "en": "Marketing team",
+      "cs": "Marketingový tým"
+    }
+  },
+  "members": [
+    {
+      "key": "cmo",
+      "handle": "cmo",
+      "title": {
+        "en": "Head of marketing",
+        "cs": "Šéf marketingu"
+      },
+      "description": {
+        "en": "Sets positioning, goals and the campaign plan, and splits the work.",
+        "cs": "Určuje positioning, cíle a plán kampaní a rozděluje práci."
+      },
+      "face": {
+        "shape": "hexagon",
+        "color": "#F35981"
+      },
+      "soul": {
+        "en": "souls/cmo.en.md",
+        "cs": "souls/cmo.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly marketing plan",
+            "cs": "Týdenní plán marketingu"
+          },
+          "schedule": "0 9 * * 1",
+          "prompt": {
+            "en": "Write this week's marketing plan: one goal, the three most important tasks and who owns each ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}). Under 150 words.",
+            "cs": "Napiš plán marketingu na tento týden: jeden cíl, tři nejdůležitější úkoly a kdo za který odpovídá ({{@copywriter}}, {{@seo}}, {{@social}}, {{@data}}). Nejvýš 150 slov."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "copywriter",
+      "handle": "copywriter",
+      "title": {
+        "en": "Copywriter",
+        "cs": "Copywriter"
+      },
+      "description": {
+        "en": "Writes headlines, web pages, emails and ads in the brand's voice.",
+        "cs": "Píše titulky, weby, e-maily a reklamy hlasem značky."
+      },
+      "face": {
+        "shape": "drop",
+        "color": "#66BFEF"
+      },
+      "soul": {
+        "en": "souls/copywriter.en.md",
+        "cs": "souls/copywriter.cs.md"
+      }
+    },
+    {
+      "key": "seo",
+      "handle": "seo",
+      "title": {
+        "en": "SEO specialist",
+        "cs": "SEO specialista"
+      },
+      "description": {
+        "en": "Finds what people search for and how to rank for it.",
+        "cs": "Zjišťuje, co lidé hledají a jak se pro to dostat nahoru."
+      },
+      "face": {
+        "shape": "circle",
+        "color": "#87B974"
+      },
+      "soul": {
+        "en": "souls/seo.en.md",
+        "cs": "souls/seo.cs.md"
+      }
+    },
+    {
+      "key": "social",
+      "handle": "social",
+      "title": {
+        "en": "Social media manager",
+        "cs": "Správce sociálních sítí"
+      },
+      "description": {
+        "en": "Plans and writes posts, keeps the calendar and answers the community.",
+        "cs": "Plánuje a píše příspěvky, vede kalendář a odpovídá komunitě."
+      },
+      "face": {
+        "shape": "cloud",
+        "color": "#FEA73E"
+      },
+      "soul": {
+        "en": "souls/social.en.md",
+        "cs": "souls/social.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Content calendar",
+            "cs": "Obsahový kalendář"
+          },
+          "schedule": "0 10 * * 5",
+          "prompt": {
+            "en": "Draft next week's posts: five posts across our networks, each with the network, the day, the text and an image idea. Mark which need approval from {{@cmo}}.",
+            "cs": "Navrhni příspěvky na příští týden: pět příspěvků napříč našimi sítěmi, u každého síť, den, text a nápad na obrázek. Označ, které musí schválit {{@cmo}}."
+          },
+          "to_chat": true
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "handle": "data",
+      "title": {
+        "en": "Marketing analyst",
+        "cs": "Marketingový analytik"
+      },
+      "description": {
+        "en": "Measures campaigns, reads the numbers and says what to do next.",
+        "cs": "Měří kampaně, čte čísla a říká, co dělat dál."
+      },
+      "face": {
+        "shape": "squircle",
+        "color": "#B068B8"
+      },
+      "soul": {
+        "en": "souls/data.en.md",
+        "cs": "souls/data.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly report",
+            "cs": "Týdenní report"
+          },
+          "schedule": "30 8 * * 1",
+          "prompt": {
+            "en": "Sum up last week from the numbers I shared: the main metric against the goal, what went up and down, and one to three recommendations for {{@cmo}}. Ask for any numbers you are missing.",
+            "cs": "Shrň minulý týden z čísel, která jsem ti dal: hlavní metrika proti cíli, co rostlo a co klesalo a jedno až tři doporučení pro {{@cmo}}. Zeptej se na čísla, která chybí."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    }
+  ]
+}

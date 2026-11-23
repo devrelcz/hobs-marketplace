@@ -15,6 +15,9 @@ The teams live here and not in the app, so a new team needs no app release.
 | --- | --- | --- |
 | <img src="teams/dev-team/cover.webp" width="240" alt="Dev team"> | [Dev team](teams/dev-team/team.json) | Head of IT, analyst, developer, tester, DevOps |
 | <img src="teams/personal-team/cover.webp" width="240" alt="Personal team"> | [Personal team](teams/personal-team/team.json) | Assistant, chef, traveler, budget keeper, coach |
+| <img src="teams/marketing-team/cover.webp" width="240" alt="Marketing team"> | [Marketing team](teams/marketing-team/team.json) | Head of marketing, copywriter, SEO specialist, social media manager, marketing analyst |
+| <img src="teams/editorial-team/cover.webp" width="240" alt="Editorial team"> | [Editorial team](teams/editorial-team/team.json) | Editor in chief, writer, proofreader, illustrator, fact-checker |
+| <img src="teams/startup-team/cover.webp" width="240" alt="Startup team"> | [Startup team](teams/startup-team/team.json) | CEO, product manager, growth, legal, finance |
 
 ## How the app reads the catalog
 

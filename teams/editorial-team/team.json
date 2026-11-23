@@ -1,0 +1,151 @@
+{
+  "$schema": "../../schema/team.schema.json",
+  "schema": 1,
+  "id": "editorial-team",
+  "version": "1.0.0",
+  "name": {
+    "en": "Editorial team",
+    "cs": "Redakce"
+  },
+  "summary": {
+    "en": "Editor in chief, writer, proofreader, illustrator and fact-checker.",
+    "cs": "Šéfredaktor, autor, korektor, ilustrátor a ověřovatel faktů."
+  },
+  "description": {
+    "en": "A small newsroom for a blog, newsletter or magazine. The editor in chief plans topics and edits, the writer drafts, the fact-checker verifies claims, the proofreader polishes the language and the illustrator proposes the pictures.",
+    "cs": "Malá redakce pro blog, newsletter nebo časopis. Šéfredaktor plánuje témata a rediguje, autor píše, ověřovatel kontroluje fakta, korektor ladí jazyk a ilustrátor navrhuje obrázky."
+  },
+  "cover": "cover.webp",
+  "tags": [
+    "writing",
+    "content"
+  ],
+  "folder": {
+    "en": "Editorial",
+    "cs": "Redakce"
+  },
+  "group": {
+    "create": true,
+    "name": {
+      "en": "Editorial team",
+      "cs": "Redakce"
+    }
+  },
+  "members": [
+    {
+      "key": "editor",
+      "handle": "editor",
+      "title": {
+        "en": "Editor in chief",
+        "cs": "Šéfredaktor"
+      },
+      "description": {
+        "en": "Plans topics, gives briefs and edits every piece before it goes out.",
+        "cs": "Plánuje témata, zadává články a rediguje vše, co vychází."
+      },
+      "face": {
+        "shape": "hexagon",
+        "color": "#33507F"
+      },
+      "soul": {
+        "en": "souls/editor.en.md",
+        "cs": "souls/editor.cs.md"
+      },
+      "jobs": [
+        {
+          "name": {
+            "en": "Weekly topic plan",
+            "cs": "Týdenní plán témat"
+          },
+          "schedule": "0 9 * * 1",
+          "prompt": {
+            "en": "Propose this week's pieces: three topics, each with the reader, the angle, the length and who writes it. Mention what {{@illustrator}} should prepare.",
+            "cs": "Navrhni články na tento týden: tři témata, u každého čtenář, úhel pohledu, délka a kdo ho píše. Uveď, co má připravit {{@illustrator}}."
+          },
+          "to_chat": true,
+          "continuity": true
+        }
+      ]
+    },
+    {
+      "key": "writer",
+      "handle": "writer",
+      "title": {
+        "en": "Writer",
+        "cs": "Autor"
+      },
+      "description": {
+        "en": "Writes articles, newsletters and stories from a brief.",
+        "cs": "Píše články, newslettery a příběhy podle zadání."
+      },
+      "face": {
+        "shape": "circle",
+        "color": "#FEC157"
+      },
+      "soul": {
+        "en": "souls/writer.en.md",
+        "cs": "souls/writer.cs.md"
+      }
+    },
+    {
+      "key": "proofreader",
+      "handle": "proofreader",
+      "title": {
+        "en": "Proofreader",
+        "cs": "Korektor"
+      },
+      "description": {
+        "en": "Fixes grammar, spelling and style and keeps the house style.",
+        "cs": "Opravuje gramatiku, pravopis a styl a hlídá jednotnou úpravu."
+      },
+      "face": {
+        "shape": "triangle",
+        "color": "#A8D8A9"
+      },
+      "soul": {
+        "en": "souls/proofreader.en.md",
+        "cs": "souls/proofreader.cs.md"
+      }
+    },
+    {
+      "key": "illustrator",
+      "handle": "illustrator",
+      "title": {
+        "en": "Illustrator",
+        "cs": "Ilustrátor"
+      },
+      "description": {
+        "en": "Proposes pictures for each piece and writes prompts for image tools.",
+        "cs": "Navrhuje obrázky ke každému textu a píše prompty pro generátory obrázků."
+      },
+      "face": {
+        "shape": "cloud",
+        "color": "#F9A7A7"
+      },
+      "soul": {
+        "en": "souls/illustrator.en.md",
+        "cs": "souls/illustrator.cs.md"
+      }
+    },
+    {
+      "key": "factchecker",
+      "handle": "factchecker",
+      "title": {
+        "en": "Fact-checker",
+        "cs": "Ověřovatel faktů"
+      },
+      "description": {
+        "en": "Checks claims, numbers and quotes against reliable sources.",
+        "cs": "Ověřuje tvrzení, čísla a citace podle spolehlivých zdrojů."
+      },
+      "face": {
+        "shape": "squircle",
+        "color": "#4CABA7"
+      },
+      "soul": {
+        "en": "souls/factchecker.en.md",
+        "cs": "souls/factchecker.cs.md"
+      }
+    }
+  ]
+}
