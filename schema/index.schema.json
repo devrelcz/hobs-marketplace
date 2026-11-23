@@ -59,6 +59,23 @@
             "minimum": 2,
             "maximum": 6
           },
+          "faces": {
+            "description": "The members' faces in team order, so the list can show the team without loading it.",
+            "type": "array",
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "shape": {
+                  "$ref": "team.schema.json#/definitions/member/properties/face/properties/shape"
+                },
+                "color": {
+                  "$ref": "team.schema.json#/definitions/member/properties/face/properties/color"
+                }
+              }
+            }
+          },
           "tags": {
             "type": "array",
             "items": {

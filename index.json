@@ -16,6 +16,28 @@
         "cs": "Šéf IT, analytik, programátor, tester a DevOps."
       },
       "members": 5,
+      "faces": [
+        {
+          "shape": "hexagon",
+          "color": "#5A5EB9"
+        },
+        {
+          "shape": "circle",
+          "color": "#FE7867"
+        },
+        {
+          "shape": "squircle",
+          "color": "#7DB1E4"
+        },
+        {
+          "shape": "triangle",
+          "color": "#FEBF54"
+        },
+        {
+          "shape": "cloud",
+          "color": "#96CE9F"
+        }
+      ],
       "tags": [
         "software",
         "engineering"
@@ -35,6 +57,28 @@
         "cs": "Šéfredaktor, autor, korektor, ilustrátor a ověřovatel faktů."
       },
       "members": 5,
+      "faces": [
+        {
+          "shape": "hexagon",
+          "color": "#33507F"
+        },
+        {
+          "shape": "circle",
+          "color": "#FEC157"
+        },
+        {
+          "shape": "triangle",
+          "color": "#A8D8A9"
+        },
+        {
+          "shape": "cloud",
+          "color": "#F9A7A7"
+        },
+        {
+          "shape": "squircle",
+          "color": "#4CABA7"
+        }
+      ],
       "tags": [
         "writing",
         "content"
@@ -54,6 +98,28 @@
         "cs": "Šéf marketingu, copywriter, SEO, sociální sítě a analytik."
       },
       "members": 5,
+      "faces": [
+        {
+          "shape": "hexagon",
+          "color": "#F35981"
+        },
+        {
+          "shape": "drop",
+          "color": "#66BFEF"
+        },
+        {
+          "shape": "circle",
+          "color": "#87B974"
+        },
+        {
+          "shape": "cloud",
+          "color": "#FEA73E"
+        },
+        {
+          "shape": "squircle",
+          "color": "#B068B8"
+        }
+      ],
       "tags": [
         "marketing",
         "business"
@@ -73,6 +139,28 @@
         "cs": "Asistent, kuchař, cestovatel, rozpočtář a trenér."
       },
       "members": 5,
+      "faces": [
+        {
+          "shape": "circle",
+          "color": "#C399DD"
+        },
+        {
+          "shape": "drop",
+          "color": "#FA99AA"
+        },
+        {
+          "shape": "pill",
+          "color": "#89C5A8"
+        },
+        {
+          "shape": "squircle",
+          "color": "#FDB74C"
+        },
+        {
+          "shape": "triangle",
+          "color": "#FE825A"
+        }
+      ],
       "tags": [
         "personal",
         "home"
@@ -92,6 +180,28 @@
         "cs": "CEO, produkťák, growth, právník a finance."
       },
       "members": 5,
+      "faces": [
+        {
+          "shape": "pill",
+          "color": "#5C639F"
+        },
+        {
+          "shape": "circle",
+          "color": "#B99BD8"
+        },
+        {
+          "shape": "triangle",
+          "color": "#72A375"
+        },
+        {
+          "shape": "squircle",
+          "color": "#72727C"
+        },
+        {
+          "shape": "hexagon",
+          "color": "#FEC358"
+        }
+      ],
       "tags": [
         "startup",
         "business"

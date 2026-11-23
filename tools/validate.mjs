@@ -198,6 +198,7 @@ function checkTeam(dir) {
     name: team.name,
     summary: team.summary,
     members: team.members.length,
+    faces: team.members.map((m) => ({ ...(m.face ?? {}) })),
     ...(team.tags?.length ? { tags: team.tags } : {}),
   };
 }
