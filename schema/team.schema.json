@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/schema/team.schema.json",
   "title": "Hobs team",
-  "description": "A ready-made team of Hobs that Hermes Hobs imports in one go: one Hermes profile per member, a folder holding them and a group chat seating them.",
+  "description": "A ready-made team of Hobs that the mobile app imports in one go: one Hermes profile per member, a folder holding them and a group chat seating them.",
   "type": "object",
   "required": [
     "schema",
@@ -31,7 +31,7 @@
       "pattern": "^\\d+\\.\\d+\\.\\d+$"
     },
     "min_app": {
-      "description": "Oldest Hermes Hobs version that can import this team.",
+      "description": "Oldest mobile app version that can import this team.",
       "type": "string",
       "pattern": "^\\d+\\.\\d+\\.\\d+$"
     },

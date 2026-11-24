@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://cdn.jsdelivr.net/gh/devrelcz/hobs-marketplace@v1/schema/index.schema.json",
   "title": "Hobs marketplace index",
-  "description": "The catalog Hermes Hobs lists. Each entry is a card; the full team lives at its path.",
+  "description": "The catalog the mobile app lists. Each entry is a card; the full team lives at its path.",
   "type": "object",
   "required": [
     "schema",
