@@ -1,6 +1,6 @@
 # Hobs Marketplace
 
-Ready-made teams of Hobs for [Hermes Hobs](https://github.com/devrelcz/hermes-hobs).
+Ready-made teams of Hobs for the [mobile app](https://github.com/devrelcz/hermes-hobs).
 
 Pick a team in the app and it is set up in one tap. Each member becomes a Hob
 (a Hermes Agent profile) with its own role, SOUL.md and face. The team gets a

@@ -1,7 +1,7 @@
 {
   "name": "hobs-marketplace",
   "private": true,
-  "description": "Ready-made teams of Hobs for Hermes Hobs.",
+  "description": "Ready-made teams of Hobs for the mobile app.",
   "license": "MIT",
   "type": "module",
   "scripts": {
